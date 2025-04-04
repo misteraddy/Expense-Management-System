@@ -1,9 +1,9 @@
 # Expense Management System  
 
-## 📌 Overview  
+## Overview  
 The **Expense Management System** is a monolithic web application designed to help individuals efficiently track, manage, and analyze their daily expenses. By eliminating manual expense tracking, the system enhances transparency, helps users maintain better control over their finances, and streamlines financial planning.
 
-## 🚀 Features  
+## Features  
 - **User Management**: Secure authentication and authorization for users.  
 - **Expense Tracking**: Add, update, and manage expenses efficiently.  
 - **Category Management**: Categorize expenses for better organization.  
@@ -12,7 +12,7 @@ The **Expense Management System** is a monolithic web application designed to he
   - Generate **PDF reports** (similar to bank statements).  
   - Send expense reports via **email** directly to the user.  
 
-## 🏠 Architecture  
+## Architecture  
 The system follows a **monolithic architecture**, ensuring scalability, flexibility, and maintainability. The application is modularized into the following key components:  
 
 1. **User Module** – Manages user authentication, roles, and profiles.  
@@ -23,7 +23,7 @@ The system follows a **monolithic architecture**, ensuring scalability, flexibil
    - Generates **PDF reports** for users.  
    - Allows users to send reports via **email**.  
 
-## 🛠️ Tech Stack  
+##  Tech Stack  
 - **Frontend**: React, Bootstrap  
 - **Backend**: Java (Spring Boot)  
 - **Database**: MySQL   
