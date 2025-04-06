@@ -14,12 +14,11 @@ const LoginPage = () => {
         validateUser(username, password).then((response) => {
             console.log("Full API Response:", response);
             let category = String(response.data);
-          
+
             if (category === "Admin" || category === "Customer") {
                 localStorage.setItem("userCategory", category);
                 localStorage.setItem("isAuthenticated", "true");
                 localStorage.setItem("username", username);
-                
 
                 navigate(category === "Admin" ? "/AdminMenu" : "/CustomerMenu");
             } else {
@@ -30,38 +29,51 @@ const LoginPage = () => {
 
     return (
         <div className="container">
-            <div className="login-box">
-                <h2>Login</h2>
-                <form onSubmit={checkLogin}>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            placeholder="Enter Username"
-                            className="form-control"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="password"
-                            placeholder="Enter Password"
-                            className="form-control"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary">
-                        Login
-                    </button>
-                </form>
-                <br />
-                <button className="btn btn-info" onClick={() => navigate("/Register")}>
+            <form className="custom-login-container" onSubmit={checkLogin}>
+                <h2 className="custom-login-heading">Login</h2>
+
+                <div className="custom-input-box">
+                    <input
+                        type="text"
+                        className="custom-input"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="custom-input-box">
+                    <input
+                        type="password"
+                        className="custom-input"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+
+                <div className="custom-input-box">
+                    <input type="submit" className="custom-submit" value="Login" />
+                </div>
+
+                <div className="custom-two-col">
+                    <label>
+                        <input type="checkbox" /> Remember Me
+                    </label>
+                    <a href="#" className="custom-link">Forgot Password?</a>
+                </div>
+
+                <button
+                    type="button"
+                    className="custom-submit"
+                    style={{ marginTop: "10px", width: "100%" }}
+                    onClick={() => navigate("/Register")}
+                >
                     Register New User
                 </button>
-            </div>
+            </form>
         </div>
     );
 };
